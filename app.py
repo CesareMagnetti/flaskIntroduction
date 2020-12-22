@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 
 # instanciate a Flask application, __name__ will reference this file, embedding it in a flask server
 app = Flask(__name__)
@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # define function for the abouve route
 def index():
-    return "hello world"
+    # we called the 'templates' folder like that since render_template will look for files in that folder
+    return render_template('index.html')
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug = True) #remove debug when we are done developing, it will print errors on the web page

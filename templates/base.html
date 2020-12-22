@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link the base.css file to set the font and margins of the web-page
+     in ginger2 double curly brackets is gonna take the result of what u parse in as a string.
+      url_for is a flask function that will allow us to link the css file. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- this is ginger2 syntax, the template engine that flask uses
+      creating a block in the template. code within this block will be
+      inherited in all other templates, so that we don't have to recode
+      the skeleton of the template for each template we make. curly bracket 
+      and percentage is ginger2 syntax for if statements, loops, and all control statements. -->
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>
